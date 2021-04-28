@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "148590602980",
+    "project_id": "budayaku-1551073699168",
+    "storage_bucket": "budayaku-1551073699168.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148590602980:android:8842a9ec1ccbc29a301af1",
+        "android_client_info": {
+          "package_name": "com.widiarifki.playground"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148590602980-4ip8s0s2vj01llg794akr73igfnjdgqs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.widiarifki.playground",
+            "certificate_hash": "d2217f95502f2989197f8ffb93d358a22ca52813"
+          }
+        },
+        {
+          "client_id": "148590602980-o7r56oc2jhmt637gpv6ce535aiu12s3h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJ7vIoQj-VDe_nlJJkxQBdawR_ThVyx_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148590602980-o7r56oc2jhmt637gpv6ce535aiu12s3h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
