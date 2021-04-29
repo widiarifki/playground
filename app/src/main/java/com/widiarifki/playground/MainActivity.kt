@@ -51,7 +51,7 @@ class MainActivity : Activity() {
         // Local work
         val filename = getBitmapFilename()
 
-        createNotification("Upload pending untuk file ${filename}")
+        createNotification("Pending", "Upload pending untuk file ${filename}")
 
         // workmanager - 0. (optional) assign param data
         val inputData = Data.Builder().apply {
@@ -88,7 +88,7 @@ class MainActivity : Activity() {
             }
             .addOnSuccessListener { taskSnapshot ->
                 // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
-                createNotification("File ${taskSnapshot.metadata?.name} berhasil diunggah")
+                createNotification("Berhasil", "File ${taskSnapshot.metadata?.name} berhasil diunggah")
             }
     }
 
@@ -105,11 +105,11 @@ class MainActivity : Activity() {
         }
     }
 
-    private fun createNotification(message: String) {
+    private fun createNotification(title: String, message: String) {
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as? NotificationManager
         val builder = NotificationCompat.Builder(this, BuildConfig.APPLICATION_ID)
             .setSmallIcon(R.mipmap.ic_launcher)
-            .setContentTitle("Kabar upload")
+            .setContentTitle(title)
             .setContentText(message)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
         createNotificationChannel()

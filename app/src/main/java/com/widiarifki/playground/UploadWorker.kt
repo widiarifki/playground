@@ -25,11 +25,11 @@ class UploadWorker(val context: Context, workerParams: WorkerParameters) : Worke
             runBlocking {
                 fileRef.putBytes(fileData)
                     .addOnFailureListener {
-                        createNotification("File gagal diunggah: ${it.message}")
+                        createNotification("Gagal", "File gagal diunggah: ${it.message}")
                     }
                     .addOnSuccessListener { taskSnapshot ->
                         // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
-                        createNotification("File ${taskSnapshot.metadata?.name} berhasil diunggah")
+                        createNotification("Berhasil", "File ${taskSnapshot.metadata?.name} berhasil diunggah")
                     }
             }
 
@@ -39,11 +39,11 @@ class UploadWorker(val context: Context, workerParams: WorkerParameters) : Worke
         }
     }
 
-    private fun createNotification(message: String) {
+    private fun createNotification(title: String, message: String) {
         val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as? NotificationManager
         val builder = NotificationCompat.Builder(applicationContext, BuildConfig.APPLICATION_ID)
             .setSmallIcon(R.mipmap.ic_launcher)
-            .setContentTitle("Kabar upload")
+            .setContentTitle(title)
             .setContentText(message)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
         createNotificationChannel()
